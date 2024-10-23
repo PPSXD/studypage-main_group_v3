@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERB Yachting</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/dropdown.css">
+    <link rel="shortcut icon" href="../favicon/favicon.png" type="image/x-icon">
+
+
+<style>
+canvas {
+    border:1px solid #d3d3d3;
+    background-color: #003cff;
+}
+</style>
+</head>
+<body>
+    <div>
+        <video class="background-video"  autoplay muted loop style="margin: auto;">
+          <source src="../video/background-video-1.mp4" type="video/mp4">
+        </video>
+        <!-- <source src="../video/rain.mp4" type="video/mp4"> -->
+  
+     <!-- <strong>網站地圖</strong> -->
+    <div class="language-bar">
+      <span><a href="sitemap.html" class="sitemap-heading" title="sitemap"><span><img src="../image/sitemap.png" alt="sitemap" class="sitemap-heading-img"></span></a></span>
+      <div class="language-drop-down-bar-button">
+        <button><img src="../image/language.png" alt="language" class="language-heading-img"></button>
+        <div class="language-bar-button-content">
+        <div class="language"><a href="../tc/index.html" title="繁">繁</a></div>
+        <div class="language"><a href="../sc/index.html" title="簡">簡</a></div>
+      </div>
+    </div>
+    </div>
+   <span><a href="../index.html" class="boat-heading"><span><img src="../image/boat2.png" alt="The world of ERB Yachting" class="heading-img"><span class="h1-heading">The world of ERB Yachting</span></span></a></span>
+    <div id="main_container" style="width:100%">
+      <div id="main_header" class="main_title">
+          <h1 class="H1-Main-Title">Home</h1>
+          <div class="navbar">
+            <div class="navbar-ul">
+                <strong class="bar-button" id="menu_yacht">Home</strong>
+                <!-- <strong>​主頁</strong> -->
+                <div class="drop-down-bar-button" id="menu_yacht">
+                  <button onclick="main_en()" class="bar-main-button"><strong>Rent yacht</strong></button>
+                  <div class="bar-button-content">
+                    <a class="bar-button-1" id="menu_yacht" href="service.html"><strong>Rent yacht service</strong></a>
+                    <!-- <strong>遊艇服務</strong> -->  
+                    <a class="bar-button-2" id="menu_yacht" href="boat.html"><strong>Rent yacht boat</strong></a>
+                    <!-- <strong>遊艇船</strong> -->  
+                  </div>
+              </div>
+                <!-- <strong>遊艇出租</strong> -->             
+                <a class="bar-button" id="menu_yacht" href="about.html"><strong>About us</strong></a>
+                 <!-- <strong>關於我們</strong> -->
+                 <a class="bar-button" id="menu_yacht" href="contact.html"><strong>Contact us</strong></a>
+                 <!-- <strong>查詢</strong> -->
+            </div>
+            
+            <!-- <video width="100%" height="100%" autoplay="autoplay" muted loop>
+              <source src="video/AFA-masthead.mp4" type="video/mp4">
+            </video> -->
+  
+            <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+            <div id="myfilter" style="position:absolute;background-color:#000000;opacity:0.3;width:500px;height:500px;display:none;"></div>
+            <div id="myrestartbutton" style="position:absolute;padding-top:250px;padding-left:10px;display:none;"><button onclick="restartGame()">Restart</button></div>
+            <div id="canvascontainer"></div>
+            <br>
+            <div style="text-align:center;width:1900px;">
+              <button ontouchstart="moveup()" onmousedown="moveup()" onmouseup="clearmove()">UP</button><br><br>
+              <button ontouchstart="moveleft()" onmousedown="moveleft()" onmouseup="clearmove()">LEFT</button>
+              <button ontouchstart="moveright()" onmousedown="moveright()" onmouseup="clearmove()">RIGHT</button><br><br>
+              <button ontouchstart="movedown()" onmousedown="movedown()" onmouseup="clearmove()">DOWN</button>
+            </div>
+        </div>
+            <br>
+
+
+
+          <!-- <img src="content/image1.jpg" width="100%" height="100%"> -->
+          <!-- <img src="/ship/sail/image1.jpg" width="100%" height="30%"> -->
+    </div>
+            <div class="main_footer">
+           <strong class="main-footer-text">©Copyright 2024 ERB Yachting All Rights Reserved.</strong>
+           <div class="main_footer_images">
+            <div class="footer_image"><a href="https://www.w3.org/WAI/WCAG2AA-Conformance" target="_blank" title="Level Double-A conformance, W3C WAI Web Content Accessibility Guidelines 2.1"><img src="../image/wcag2.1AA-v.gif" alt="Level Double-A conformance, W3C WAI Web Content Accessibility Guidelines 2.1"></a></div>
+            <div class="footer_image"><a href="https://www.digitalpolicy.gov.hk/en/our_work/digital_government/digital_inclusion/accessibility/nurturing_expertise/" target="_blank" title="Web Accessibility Recognition Scheme"><img src="../image/wa_gold_logo.jpg" alt="Web Accessibility Recognition Scheme"></a></div>
+            <div class="footer_image" id="footer_image_special_logo"><a href="https://www.brandhk.gov.hk/en/" target="_blank" title="Brand Hong Kong"><img src="../image/logo_brandhk_en.png" alt="Brand Hong Kong"></a></div>
+          </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+<script>
+
+var myGameArea;
+var myGamePiece;
+var myBackground;
+var myObstacles = [];
+var myscore;
+
+function restartGame() {
+document.getElementById("myfilter").style.display = "none";
+document.getElementById("myrestartbutton").style.display = "none";
+myGameArea.stop();
+myGameArea.clear();
+myGameArea = {};
+myGamePiece = {};
+myObstacles = [];
+myscore = {};
+document.getElementById("canvascontainer").innerHTML = "";
+startGame()
+}
+
+function startGame() {
+    myGameArea = new gamearea();
+    myGamePiece = new component(30, 30, "red", 10, 75);
+    myscore = new component("15px", "Consolas", "black", 220, 25, "text");
+    myGameArea.start();
+}
+
+function gamearea() {
+    this.canvas = document.createElement("canvas");
+    this.canvas.width = 500;
+    this.canvas.height = 500;    
+    document.getElementById("canvascontainer").appendChild(this.canvas);
+    this.context = this.canvas.getContext("2d");
+    this.pause = false;
+    this.frameNo = 0;
+    this.start = function() {
+        this.interval = setInterval(updateGameArea, 20);
+    }
+    this.stop = function() {
+        clearInterval(this.interval);
+        this.pause = true;
+    }
+    this.clear = function(){
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+}
+
+function component(width, height, color, x, y, type) {
+
+    this.type = type;
+    if (type == "text") {
+        this.text = color;
+    }
+    this.score = 0;    this.width = width;
+    this.height = height;
+    this.speedX = 0;
+    this.speedY = 0;    
+    this.x = x;
+    this.y = y;    
+    this.update = function() {
+        ctx = myGameArea.context;
+        if (this.type == "text") {
+            ctx.font = this.width + " " + this.height;
+            ctx.fillStyle = color;
+            ctx.fillText(this.text, this.x, this.y);
+        } else {
+            ctx.fillStyle = color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);
+        }
+    }
+    this.crashWith = function(otherobj) {
+        var myleft = this.x;
+        var myright = this.x + (this.width);
+        var mytop = this.y;
+        var mybottom = this.y + (this.height);
+        var otherleft = otherobj.x;
+        var otherright = otherobj.x + (otherobj.width);
+        var othertop = otherobj.y;
+        var otherbottom = otherobj.y + (otherobj.height);
+        var crash = true;
+        if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
+            crash = false;
+        }
+        return crash;
+    }
+}
+
+function updateGameArea() {
+    var x, y, min, max, height, gap;
+    for (i = 0; i < myObstacles.length; i += 1) {
+        if (myGamePiece.crashWith(myObstacles[i])) {
+            myGameArea.stop();
+            document.getElementById("myfilter").style.display = "block";
+            document.getElementById("myrestartbutton").style.display = "block";
+            return;
+        } 
+    }
+    if (myGameArea.pause == false) {
+        myGameArea.clear();
+        myGameArea.frameNo += 1;
+        myscore.score +=1;        
+        if (myGameArea.frameNo == 1 || everyinterval(150)) {
+            x = myGameArea.canvas.width;
+            y = myGameArea.canvas.height - 100;
+            min = 25;
+            max = 400;
+            height = Math.floor(Math.random()*(max-min+1)+min);
+            min = 100
+            max = 150;
+            gap = Math.floor(Math.random()*(max-min+1)+min);
+            myObstacles.push(new component(10, height, "green", x, 0));
+            myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
+        }
+        for (i = 0; i < myObstacles.length; i += 1) {
+            myObstacles[i].x += -1;
+            myObstacles[i].update();
+        }
+        myscore.text="SCORE: " + myscore.score;        
+        myscore.update();
+        myGamePiece.x += myGamePiece.speedX;
+        myGamePiece.y += myGamePiece.speedY;    
+        myGamePiece.update();
+    }
+}
+
+function everyinterval(n) {
+    if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
+    return false;
+}
+
+function moveup(e) {
+    myGamePiece.speedY = -5; 
+}
+
+function movedown() {
+    myGamePiece.speedY = 5; 
+}
+
+function moveleft() {
+    myGamePiece.speedX = -5; 
+}
+
+function moveright() {
+    myGamePiece.speedX = 5; 
+}
+
+function clearmove(e) {
+    myGamePiece.speedX = 0; 
+    myGamePiece.speedY = 0; 
+}
+startGame();
+
+</script>
+
+</body>
+</html>
