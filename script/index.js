@@ -26,6 +26,9 @@ function cover5() {
   window.open(`en/Beneteau-Oceanis-60.html` , `_blank`);
 }
 function cover6() {
+  window.open(`en/Oceanco-Black-Pearl.html` , `_blank`);
+}
+function cover7() {
   window.open(`en/Bali-5-8.html` , `_blank`);
 }
 
@@ -45,6 +48,9 @@ function en_cover5() {
   window.open(`Beneteau-Oceanis-60.html` , `_blank`);
 }
 function en_cover6() {
+  window.open(`Oceanco-Black-Pearl.html` , `_blank`);
+}
+function en_cover7() {
   window.open(`Bali-5-8.html` , `_blank`);
 }
 
