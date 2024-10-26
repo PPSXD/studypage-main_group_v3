@@ -11,15 +11,73 @@
     <link rel="stylesheet" href="../style/boat.css">
 
 
-<style>
-
-.lb-closeContainer {
-  position: absolute;
-  top: -30px;
-  right: 28px;
-}
-</style>
-
+    <style>
+      .slider{
+          position: relative;
+          width:100%;
+          margin: auto;
+          overflow: hidden;
+          
+      }
+      .slider img{
+          max-width:  800px;
+          display: none;
+          margin: auto;
+      }
+      
+      .slide{
+        border: 5px solid white;
+      }
+      
+      .slide:hover{
+        cursor: pointer;
+      }
+      
+      img.displaySlide{
+          display: block;
+          animation-name: fade;
+          animation-duration: 1.5s;
+      
+      }
+      .slider button{
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 2rem;
+          padding: 10px 15px;
+          background-color: hsl(0, 0%, 0%, 0.5);
+          color: white;
+          border: none;
+          cursor: pointer;
+      }
+      .prev{
+          left: 0;
+      }
+      .next{
+          right: 0;
+      }
+      @keyframes fade{
+          from{opacity: 0.5;}
+          to{opacity: 1;}
+      }
+      .slider button:hover{
+          background-color: hsla(0, 0%, 50%, 0.5);
+      }
+      
+      .slide-boat{
+        display: inline-block;
+        padding: 2em;
+        margin: -2em;
+        position: relative;
+        z-index: 1;
+      }
+          
+    .lb-closeContainer {
+      position: absolute;
+      top: -30px;
+      right: 28px;
+    }
+      </style>
 
 
 </head>
@@ -90,31 +148,26 @@
           <!--  -->
           
      <section> 
-        <div>
+      <div class="slider">
+        <div class="slides">
+            <div><a class="slide-boat" href="../Sailing-boat/oceanis60/1.jfif"  data-lightbox="oceanis601" data-title="Beneteau Oceanis 60"><img class="slide" src="../Sailing-boat/oceanis60/1.jfif" alt="Beneteau Oceanis 60"></a></div>
+            <div><a class="slide-boat" href="../Sailing-boat/oceanis60/2.jfif"  data-lightbox="oceanis602" data-title="Beneteau Oceanis 60"><img class="slide" src="../Sailing-boat/oceanis60/2.jfif" alt="Beneteau Oceanis 60"></a></div>
+            <div><a class="slide-boat" href="../Sailing-boat/oceanis60/3.jfif"  data-lightbox="oceanis603" data-title="Beneteau Oceanis 60"><img class="slide" src="../Sailing-boat/oceanis60/3.jfif" alt="Beneteau Oceanis 60"></a></div>
+            <div><a class="slide-boat" href="../Sailing-boat/oceanis60/4.jfif"  data-lightbox="oceanis604" data-title="Beneteau Oceanis 60"><img class="slide" src="../Sailing-boat/oceanis60/4.jfif" alt="Beneteau Oceanis 60"></a></div>
 
-            <div class="boat-container" >
-                <div><a href="../Sailing-boat/oceanis60/1.jfif" data-lightbox="oceanis60" data-title="Beneteau Oceanis 60"><img class="boat-oceanis60-img" src="../Sailing-boat/oceanis60/1.jfif" alt="Beneteau Oceanis 60"></a></div>
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094</button>
+        <button class="next" onclick="nextSlide()">&#10095</button>
+    </div>
 
-                <div><a href="../Sailing-boat/oceanis60/2.jfif" data-lightbox="oceanis60" data-title="Beneteau Oceanis 60"><img class="boat-oceanis60-img" src="../Sailing-boat/oceanis60/2.jfif" alt="Beneteau Oceanis 60"></a></div>
-
-                <div class="boat-information-container">
-                <h2 class="boat-information-h2">Information</h2>
-                <p class="boat-information-p">Length: 25m<br>Guests: 10/person<br>Crew: 3/person<br>Cost: HK$8000.00 per day<br><br>Facilities:<br><br>3 Room<br>2 Restroom<br>Kitchen<br>Air conditioner<br>TV<br>WiFi</p>
-              </div>
-               <div><a href="../Sailing-boat/oceanis60/3.jfif" data-lightbox="oceanis60" data-title="Beneteau Oceanis 60"><img class="boat-oceanis60-img" src="../Sailing-boat/oceanis60/3.jfif" alt="Beneteau Oceanis 60"></a></div>
-               <div> <a href="../Sailing-boat/oceanis60/4.jfif" data-lightbox="oceanis60" data-title="Beneteau Oceanis 60"><img class="boat-oceanis60-img" src="../Sailing-boat/oceanis60/4.jfif" alt="Beneteau Oceanis 60"></a></div>
-                          
-</div>
-      </div>
+    <div class="boat-information-container">
+      <h2 class="boat-information-h2">Information</h2>
+      <p class="boat-information-p">Length: 25m<br>Guests: 10/person<br>Crew: 3/person<br>Cost: HK$8000.00 per day<br><br>Facilities:<br><br>3 Room<br>2 Restroom<br>Kitchen<br>Air conditioner<br>TV<br>WiFi</p>
+    </div>
       </section>
           
 
-
-
-
-
-
-          <br>
+      <br>
         </div>
           <div class="main_footer">
             <strong class="main-footer-text">©Copyright 2024 ERB Yachting All Rights Reserved.</strong>
@@ -128,6 +181,50 @@
   </div>
   </div>
 </div>
+<script>
+  // IMAGE SLIDER
+const slides = document.querySelectorAll(".slides img")
+let slideIndex = 0;
+let intervalID = null;
+//initializeSlider();
+document.addEventListener("DOMContentLoaded", initializeSlider);
+
+function initializeSlider(){
+    if(slides.length > 0){
+        slides[slideIndex].classList.add("displaySlide");
+        intervalID = setInterval(nextSlide, 5000);
+    }
+    
+}
+
+function showSlide(index){
+
+    if(index >= slides.length){
+        slideIndex = 0;
+
+    }else if(index < 0){
+        slideIndex = slides.length - 1;
+    }
+
+    slides.forEach(slides =>{
+        slides.classList.remove("displaySlide");
+    });
+    slides[slideIndex].classList.add("displaySlide");
+}
+
+function prevSlide(){
+    clearInterval(intervalID);
+    slideIndex--;
+    showSlide(slideIndex);
+}
+
+function nextSlide(){
+    slideIndex++;
+    showSlide(slideIndex);
+}
+
+
+</script>
 <script src="../script/index.js"></script>
 <script src="../script/lightbox-plus-jquery.min.js"></script>
 </body>
