@@ -1,0 +1,13 @@
+.fa-gamepad{
+    color:  hsl(0, 100%, 70%);
+    font-size: 50px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  .fa-gamepad:hover{
+    color: hsl(0, 95%, 50%);
+  
+  }
+  .fa-gamepad:active{
+    color:  hsl(0, 95%, 30%);
+  }

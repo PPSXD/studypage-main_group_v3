@@ -1,0 +1,9 @@
+.boat-information-container{
+    text-align: center;
+}
+.boat-information-h2{
+    font-size: 2rem;
+}
+.boat-information-p{
+    margin-top: 3px; font-size: 1.5em;
+}
