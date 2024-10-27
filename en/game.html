@@ -215,6 +215,9 @@ startGame()
 function startGame() {
     myGameArea = new gamearea();
     myGamePiece = new component(50, 50, "../image/sail.png", 10, 120, "image");
+    mySound = new sound("https://www.w3schools.com/graphics/bounce.mp3");
+    myMusic = new sound("https://www.w3schools.com/graphics/gametheme.mp3");
+    myMusic.play();
     myscore = new component("30px", "Open Sans", "red", 280, 40, "text");
     myGameArea.start();
 }
@@ -289,6 +292,8 @@ function updateGameArea() {
     var x, y, min, max, height, gap;
     for (i = 0; i < myObstacles.length; i += 1) {
         if (myGamePiece.crashWith(myObstacles[i])) {
+            mySound.play();
+            myMusic.stop();  
             myGameArea.stop();
             document.getElementById("myfilter").style.display = "block";
             document.getElementById("myrestartbutton").style.display = "block";
@@ -323,6 +328,20 @@ function updateGameArea() {
         myGamePiece.y += myGamePiece.speedY;    
         myGamePiece.update();
     }
+}
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }    
 }
 
 function everyinterval(n) {
