@@ -9,3 +9,23 @@
 .boat-flex img{
     max-width: 500px;
 }
+
+.boat-img-a{
+    cursor: pointer;
+  }
+  
+    .boat-img-a:hover .boat-img-off{
+      display: none;
+    } 
+  
+    .boat-img-a:hover .boat-img-on{
+      display: block;
+    } 
+  
+    .boat-img-off {
+      display: block;
+    }
+    
+    .boat-img-on {
+      display: none;
+    }

@@ -260,8 +260,6 @@ margin-right: 40px;
   .service-heading-img-on {
     display: none;
     max-width: 500px;
-
-
   }
   
   .service-heading:hover .service-heading-img-off { 
@@ -299,3 +297,4 @@ margin-right: 40px;
     display: block;
 
   }
+  
