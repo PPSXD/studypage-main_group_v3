@@ -32,7 +32,7 @@
       <span><a href="../index.html" class="boat-heading"><span><img src="../image/erb_logo2.png" alt="ERB Yachting & Charter" class="heading-img"></span></a></span>
       <div id="main_container" style="width:100%">
         <div id="main_header" class="main_title">
-            <h1 class="H1-Main-Title">Contact Us</h1>
+            <h1 class="H1-Main-Title">Enquiry</h1>
             <div class="navbar">
                 <div class="navbar-ul">
                     <a class="bar-button" id="menu_yacht" href="index.html"><strong>Home</strong></a>
@@ -49,34 +49,74 @@
                     <!-- <strong>遊艇出租</strong> -->             
                     <a class="bar-button" id="menu_yacht" href="about.html"><strong>About us</strong></a>
                      <!-- <strong>關於我們</strong> -->
-                     <a class="bar-button" id="menu_yacht" href="enquiry.html"><strong>Enquiry</strong></a>
+                     <strong class="bar-button" id="menu_yacht">Enquiry</strong>
                      <!-- <strong>查詢</strong> -->
-                     <strong class="bar-button" id="menu_yacht">Contact Us</strong>
+                     <a class="bar-button" id="menu_yacht" href="contact.html"><strong>Contact us</strong></a>
                      <!-- <strong>查詢</strong> -->
                 </div>
-
-
-                <h2 ><strong>Open Hours:</strong></h2>
-                <ul >
-                  <li>Monday: 11 a.m. to 2 p.m.</li>
-                  <li>Monday: 11 a.m. to 2 p.m.</li>
-                  <li>Monday: 11 a.m. to 2 p.m.</li>
-                  <li>Monday: 11 a.m. to 2 p.m.</li>
-                  <li>Monday: 11 a.m. to 2 p.m.</li>
-                  <li>Monday: 11 a.m. to 2 p.m.</li>
-                  <li>Saturday: 12 noon to 4 p.m.</li>
-                  <li>Sunday, Public Holidays: 6 p.m. to 10 p.m.</li>
-                 
-                </ul>
-                <div ><strong>Phone:</strong>(852) 182 182</div>
-                <div > <strong>Email:</strong> <a
-                    href="mailto:erbyachting@gov.hk?subject=Welcome to ERB Yachting, What can I help you?">erbyachting@gov.hk</a>
-                </div>
-                <p ><strong>Our Location:</strong></p>
-                <p >Kwun Tong Ferry Pier</p>
-
-                <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7382.397686987232!2d114.2234344310752!3d22.308318401850837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34040143fee1e02f%3A0xe6489affb46b486!2z6aaZ5riv6KeA5aGY5qau5qWt6KGX6KeA5aGY5rih6Lyq56K86aCt!5e0!3m2!1szh-TW!2sus!4v1730213365021!5m2!1szh-TW!2sus"width="600" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                <p><a href="#Top">Back to Top</a></p>
+                <div class="form-big-group">
+                  <p>If you have any question, please write down below those box and submit it.</p>
+        <form action="../en/thank-you.html" method="GET" enctype="multipart/form-data">
+          <div class="form-group">
+            <div class="name">  
+          
+          <label for="firstname">First Name:</label>
+            <input type="text" id="firstname" minlength="6" maxlength="15" placeholder="First Name" required>
+          
+          </div>
+          <div class="name">
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" minlength="6" maxlength="15" placeholder="Last Name" required>
+          </div>
+        </div>
+          
+            <div class="form-group">
+              <div class="email">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="example@example.com" required>
+          </div>
+          <div class="phone">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" placeholder="852-1234-6789" pattern="[852]{3}-[0-9]{4}-[0-9]{4}" required>
+          </div>
+          </div>
+ 
+          <!-- <div class="form-group">
+            <div class="date">
+            <label for="BookingDate">Booking date:</label>
+            <input type="date" id="BookingDate" required>
+          </div>
+          <div class="time">
+            <label for="BookingTime">Booking time:</label>
+            <input type="time" id="BookingTime" required>
+          </div>
+        </div> -->
+            <!-- <div class="form-group">
+              <div class="number">
+            <label for="quantity">Number of guest:</label>
+            <input type="number" id="quantity" min="1" max="12" value="0" required>
+          </div>
+            <div class="select-label">
+            <label for="Depart-from">Where do you want to depart from?</label>
+            <br>
+            <select id="Depart-from">
+                <option value="visa">HK Island</option>
+                <option value="mastercard">Sai Kung</option>
+                <option value="other">Other(please specify)</option>
+            </select>
+          </div>
+          </div> -->
+         
+           <div class="comment">
+            <label for="comment">Please write your question here below the white box.</label><br>
+            <textarea id="comment:" rows="3" cols="90" required placeholder="Please write your question here"></textarea><br>
+          </div>
+        <div class="form-group-6">
+            <input type="reset">
+            <input type="submit">
+        </div>
+          </form>
+        </div>
 
 
               <div class="main_footer">
