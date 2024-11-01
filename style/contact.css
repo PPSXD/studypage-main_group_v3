@@ -1,0 +1,39 @@
+h2{
+    font-size: 48px;
+}
+table{
+    text-align: center; margin: auto; border: none;
+}
+tr{
+    text-align: center;
+}
+td, th{
+    padding: 20px; font-size: 36px;
+}
+
+.back-to-top{
+    color: #ffd900; text-decoration: none; font-size: 20px; padding: 10px;
+}
+.back-to-top:hover{
+    color: cyan;
+}
+.back-to-top:active{
+    color: red;
+}
+.flex-icon{display: flex; justify-content: center; flex-wrap: nowrap; gap: 20px;}
+
+.icon{
+    font-size: 36px;
+}
+.address{
+    font-size: 20px;
+}
+.fa-phone, .fa-envelope, .fa-square-facebook, .fa-instagram{
+    color: #ffd900;
+}
+.fa-phone:hover, .fa-envelope:hover, .fa-square-facebook:hover, .fa-instagram:hover{
+    color: cyan;
+}
+.fa-phone:active, .fa-envelope:active, .fa-square-facebook:active, .fa-instagram:active{
+    color:red;
+}

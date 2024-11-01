@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="../style/flex.css">
     <link rel="stylesheet" href="../style/boat.css">
     <link rel="shortcut icon" href="../favicon/favicon.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style/game-logo.css">
+    <link rel="stylesheet" href="../style/logo.css">
 </head>
 <body>
   
@@ -19,17 +21,23 @@
       <source src="../video/background-video-2.mp4" type="video/mp4">
     </video>
 
-  <div class="language-bar">
-    <a href="game.html"><i class="fa-solid fa-gamepad fa-2xs"></i></a>
-    <span><a href="sitemap.html" class="sitemap-heading" title="sitemap"><span><img src="../image/sitemap.png" alt="sitemap" class="sitemap-heading-img"></span></a></span>
-    <div class="language-drop-down-bar-button">
-      <button><img src="../image/language.png" alt="language" class="language-heading-img"></button>
-      <div class="language-bar-button-content">
-      <div class="language"><a href="../tc/boat.html" title="繁">繁</a></div>
-      <div class="language"><a href="../sc/boat.html" title="簡">簡</a></div>
+    <div class="language-bar">
+      <a href="game.html"><i class="fa-solid fa-gamepad fa-2xs"  id="mark-3"></i></a>
+      <!-- <span><a href="en/sitemap.html" class="sitemap-heading" title="sitemap"><span><img src="image/sitemap.png" alt="sitemap" class="sitemap-heading-img"></span></a></span> -->
+  
+          
+        <a href="sitemap.html" title="sitemap">
+          <i class="fa-solid fa-sitemap" id="mark-1"></i>
+        </a>
+  
+      <div class="language-drop-down-bar-button">
+        <button><i class="fa-solid fa-language" id="mark-2"></i></button>
+        <div class="language-bar-button-content">
+        <div class="language"><a href="../tc/index.html" title="繁">繁</a></div>
+        <div class="language"><a href="../sc/index.html" title="簡">簡</a></div>
+      </div>    
     </div>
-  </div>
-  </div>
+    </div>
   <span><a href="../index.html" class="boat-heading"><span><img src="../image/erb_logo2.png" alt="ERB Yachting & Charter" class="heading-img"></span></a></span>
   <div id="main_container" style="width:100%">
     <div id="main_header" class="main_title">
@@ -41,15 +49,16 @@
   <div class="navbar-ul">
     <a class="bar-button" id="menu_yacht" href="index.html"><strong>Home</strong></a>
     <!-- <strong>​主頁</strong> -->
-    <div class="drop-down-bar-button" id="menu_yacht">
-      <button onclick="main_en()"><strong>Rent yacht</strong></button>
-      <div class="bar-button-content">
-        <a class="bar-button-1" id="menu_yacht" href="service.html"><strong>Rent yacht service</strong></a>
+    <!-- <div class="drop-down-bar-button" id="menu_yacht"> -->
+      <!-- <button onclick="main_en()"><strong>Rent yacht</strong></button> -->
+      <a class="bar-button" id="menu_yacht" href="main.html"><strong>Rent yacht</strong></a>
+      <!-- <div class="bar-button-content"> -->
+        <!-- <a class="bar-button-1" id="menu_yacht" href="service.html"><strong>Rent yacht service</strong></a> -->
         <!-- <strong>遊艇服務</strong> -->  
-        <div class="bar-button-2" id="menu_yacht"><strong>Rent yacht boat</strong></div>
+        <!-- <div class="bar-button-2" id="menu_yacht"><strong>Rent yacht boat</strong></div> -->
         <!-- <strong>遊艇船</strong> -->  
-      </div>
-  </div>
+      <!-- </div> -->
+  <!-- </div> -->
     <!-- <strong>遊艇出租</strong> -->             
     <a class="bar-button" id="menu_yacht" href="about.html"><strong>About us</strong></a>
      <!-- <strong>關於我們</strong> -->
@@ -123,6 +132,7 @@
   </div>
   </div>
   </div>
+  <script src="../script/script_logo.js"></script>
   <script src="../script/index.js"></script>
 </body>
 </html>

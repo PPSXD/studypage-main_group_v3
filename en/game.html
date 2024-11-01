@@ -7,110 +7,11 @@
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/dropdown.css">
     <link rel="shortcut icon" href="../favicon/favicon.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-<style>
-canvas {
-    border:1px solid #d3d3d3;
-    background-image: url(../image/sea.png);
-}
-.restartGame{
-  border: none;
-  border-radius: 25px;
-  font-size: 30px;
-  cursor: pointer;
-  padding: 15px;
-  background-color: hsl(0, 100%, 70%);
-  color: white;
-  }
-  .restartGame:hover{
-    background-color: hsl(0, 95%, 50%);
-  }
-  .restartGame:active{
-    background-color: hsl(0, 95%, 30%);
-  }
-  
-.up{
-  margin-top: 20px;
-  border: none;
-  border-radius: 25px;
-  font-size: 30px;
-  cursor: pointer;
-  padding: 15px;
-  background-color: hsl(0, 100%, 70%);
-  color: white;
-}
-.up:hover{
-    background-color: hsl(0, 95%, 50%);
-  }
-  .up:active{
-    background-color: hsl(0, 95%, 30%);
-  }
-.left{
-
-  border: none;
-  border-radius: 25px;
-  font-size: 30px;
-  cursor: pointer;
-  padding: 15px;
-  background-color: hsl(0, 100%, 70%);
-  color: white;
-}
-.left:hover{
-    background-color: hsl(0, 95%, 50%);
-  }
-  .left:active{
-    background-color: hsl(0, 95%, 30%);
-  }
-.right{
-
-  border: none;
-  border-radius: 25px;
-  font-size: 30px;
-  cursor: pointer;
-  padding: 15px;
-  background-color: hsl(0, 100%, 70%);
-  color: white;
-
-}
-.right:hover{
-    background-color: hsl(0, 95%, 50%);
-  }
-  .right:active{
-    background-color: hsl(0, 95%, 30%);
-  }
-.down{
- 
-  border: none;
-  border-radius: 25px;
-  font-size: 30px;
-  cursor: pointer;
-  padding: 15px;
-  background-color: hsl(0, 100%, 70%);
-  color: white;
-}
-.down:hover{
-    background-color: hsl(0, 95%, 50%);
-  }
-  .down:active{
-    background-color: hsl(0, 95%, 30%);
-  }
-.fa-gamepad{
-  color:  hsl(0, 100%, 70%);
-  font-size: 50px;
-  margin-top: 20px;
-  cursor: pointer;
-}
-.fa-gamepad:hover{
-  color: hsl(0, 95%, 50%);
-
-}
-.fa-gamepad:active{
-  color:  hsl(0, 95%, 30%);
-
-}
-</style>
+    <link rel="stylesheet" href="../style/game-logo.css">
+    <link rel="stylesheet" href="../style/logo.css">
+    <link rel="stylesheet" href="../style/game.css">
 </head>
 <body>
     <div>
@@ -121,14 +22,20 @@ canvas {
   
      <!-- <strong>網站地圖</strong> -->
     <div class="language-bar">
-      <a href="game.html"><i class="fa-solid fa-gamepad fa-2xs"></i></a>
-      <span><a href="sitemap.html" class="sitemap-heading" title="sitemap"><span><img src="../image/sitemap.png" alt="sitemap" class="sitemap-heading-img"></span></a></span>
+      <a href="game.html"><i class="fa-solid fa-gamepad fa-2xs"  id="mark-3"></i></a>
+      <!-- <span><a href="en/sitemap.html" class="sitemap-heading" title="sitemap"><span><img src="image/sitemap.png" alt="sitemap" class="sitemap-heading-img"></span></a></span> -->
+  
+          
+        <a href="sitemap.html" title="sitemap">
+          <i class="fa-solid fa-sitemap" id="mark-1"></i>
+        </a>
+  
       <div class="language-drop-down-bar-button">
-        <button><img src="../image/language.png" alt="language" class="language-heading-img"></button>
+        <button><i class="fa-solid fa-language" id="mark-2"></i></button>
         <div class="language-bar-button-content">
         <div class="language"><a href="../tc/index.html" title="繁">繁</a></div>
         <div class="language"><a href="../sc/index.html" title="簡">簡</a></div>
-      </div>
+      </div>    
     </div>
     </div>
    <span><a href="../index.html" class="boat-heading"><span><img src="../image/erb_logo2.png" alt="ERB Yachting & Charter" class="heading-img"></span></a></span>
@@ -139,15 +46,16 @@ canvas {
             <div class="navbar-ul">
                 <a  class="bar-button" id="menu_yacht" href="index.html"><strong>Home</strong></a>
                 <!-- <strong>​主頁</strong> -->
-                <div class="drop-down-bar-button" id="menu_yacht">
-                  <button onclick="main_en()" class="bar-main-button"><strong>Rent yacht</strong></button>
-                  <div class="bar-button-content">
-                    <a class="bar-button-1" id="menu_yacht" href="service.html"><strong>Rent yacht service</strong></a>
+                <!-- <div class="drop-down-bar-button" id="menu_yacht"> -->
+                  <a class="bar-button" id="menu_yacht" href="main.html"><strong>Rent yacht</strong></a>
+                  <!-- <button onclick="main_en()" class="bar-main-button"><strong>Rent yacht</strong></button> -->
+                  <!-- <div class="bar-button-content"> -->
+                    <!-- <a class="bar-button-1" id="menu_yacht" href="service.html"><strong>Rent yacht service</strong></a> -->
                     <!-- <strong>遊艇服務</strong> -->  
-                    <a class="bar-button-2" id="menu_yacht" href="boat.html"><strong>Rent yacht boat</strong></a>
+                    <!-- <a class="bar-button-2" id="menu_yacht" href="boat.html"><strong>Rent yacht boat</strong></a> -->
                     <!-- <strong>遊艇船</strong> -->  
-                  </div>
-              </div>
+                  <!-- </div> -->
+              <!-- </div> -->
                 <!-- <strong>遊艇出租</strong> -->             
                 <a class="bar-button" id="menu_yacht" href="about.html"><strong>About us</strong></a>
                  <!-- <strong>關於我們</strong> -->
@@ -162,12 +70,12 @@ canvas {
             </video> -->
   
             <h2>Please click and use the button "UP" and "DOWN" that play the boat game.</h2>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-            <div id="myfilter" style="position:absolute;background-color:#000000;opacity:0.3;width:500px;height:500px;display:none;"></div>
-            <div id="myrestartbutton" style="position:absolute;padding-top:220px;padding-left:10px;display:none;"><button class="restartGame" onclick="restartGame()">Restart</button></div>
+            <div class="game-flex" >
+            <div id="myfilter" class="game-myfilter" ></div>
+            <div id="myrestartbutton" class="game-myrestartbutton"><button class="restartGame" onclick="restartGame()">Restart</button></div>
             <div id="canvascontainer"></div>
             <br>
-            <div style="text-align:center;width:1900px;">
+            <div class="game-move-button">
               <button class="up" ontouchstart="moveup()" onmousedown="moveup()" onmouseup="clearmove()">UP</button><br><br>
               <!-- <button class="left" ontouchstart="moveleft()" onmousedown="moveleft()" onmouseup="clearmove()">LEFT</button> -->
               <!-- <button class="right" ontouchstart="moveright()" onmousedown="moveright()" onmouseup="clearmove()">RIGHT</button><br><br> -->
@@ -193,192 +101,8 @@ canvas {
     </div>
     </div>
 
-<script>
-
-var myGameArea;
-var myGamePiece;
-var myBackground;
-var myObstacles = [];
-var myscore;
-
-function restartGame() {
-document.getElementById("myfilter").style.display = "none";
-document.getElementById("myrestartbutton").style.display = "none";
-myGameArea.stop();
-myGameArea.clear();
-myGameArea = {};
-myGamePiece = {};
-myObstacles = [];
-myscore = {};
-document.getElementById("canvascontainer").innerHTML = "";
-startGame()
-}
-
-function startGame() {
-    myGameArea = new gamearea();
-    myGamePiece = new component(50, 50, "../image/sail.png", 10, 120, "image");
-    mySound = new sound("https://www.w3schools.com/graphics/bounce.mp3");
-    myMusic = new sound("https://www.w3schools.com/graphics/gametheme.mp3");
-    myMusic.play();
-    myscore = new component("30px", "Open Sans", "red", 280, 40, "text");
-    myGameArea.start();
-}
-function gamearea() {
-    this.canvas = document.createElement("canvas");
-    this.canvas.width = 500;
-    this.canvas.height = 500;    
-    document.getElementById("canvascontainer").appendChild(this.canvas);
-    this.context = this.canvas.getContext("2d");
-    this.pause = false;
-    this.frameNo = 0;
-    this.start = function() {
-        this.interval = setInterval(updateGameArea, 20);
-    }
-    this.stop = function() {
-        clearInterval(this.interval);
-        this.pause = true;
-    }
-    this.clear = function(){
-        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    }
-}
-
-function component(width, height, color, x, y, type) {
-
-    this.type = type;
- if (type == "image") {
-    this.image = new Image();
-    this.image.src = color;
-  }
-    this.score = 0;    this.width = width;
-    this.height = height;
-    this.speedX = 0;
-    this.speedY = 0;    
-    this.x = x;
-    this.y = y;    
-    this.update = function() {
-    ctx = myGameArea.context;
-    if (type == "image") {
-      ctx.drawImage(this.image,
-        this.x,
-        this.y,
-        this.width, this.height);
-    }else if (this.type == "text") {
-            ctx.font = this.width + " " + this.height;
-            ctx.fillStyle = color;
-            ctx.fillText(this.text, this.x, this.y);
-        } else {
-      ctx.fillStyle = color;
-      ctx.fillRect(this.x, this.y, this.width, this.height);
-    }
-  }
-    this.crashWith = function(otherobj) {
-        var myleft = this.x;
-        var myright = this.x + (this.width);
-        var mytop = this.y;
-        var mybottom = this.y + (this.height);
-        var otherleft = otherobj.x;
-        var otherright = otherobj.x + (otherobj.width);
-        var othertop = otherobj.y;
-        var otherbottom = otherobj.y + (otherobj.height);
-        var crash = true;
-        if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
-            crash = false;
-        }
-        return crash;
-    }
-}
-
-function updateGameArea() {
-    var x, y, min, max, height, gap;
-    for (i = 0; i < myObstacles.length; i += 1) {
-        if (myGamePiece.crashWith(myObstacles[i])) {
-            mySound.play();
-            myMusic.stop();  
-            myGameArea.stop();
-            document.getElementById("myfilter").style.display = "block";
-            document.getElementById("myrestartbutton").style.display = "block";
-            return;
-        } 
-    }
-    if (myGameArea.pause == false) {
-        myGameArea.clear();
-        myGameArea.frameNo += 1;
-        myscore.score +=1;        
-        if (myGameArea.frameNo == 1 || everyinterval(150)) {
-            x = myGameArea.canvas.width;
-            y = myGameArea.canvas.height - 100;
-            min = 25;
-            max = 400;
-            height = Math.floor(Math.random()*(max-min+1)+min);
-            min = 100
-            max = 150;
-            gap = Math.floor(Math.random()*(max-min+1)+min);
-            myObstacles.push(new component(10, height, "../image/rockwall.png", x, 0, "image"));
-            myObstacles.push(new component(10, x - height - gap, "../image/rockwall.png", x, height + gap, "image"));
-
-
-        }
-        for (i = 0; i < myObstacles.length; i += 1) {
-            myObstacles[i].x += -1;
-            myObstacles[i].update();
-        }
-        myscore.text="SCORE: " + myscore.score;        
-        myscore.update();
-        myGamePiece.x += myGamePiece.speedX;
-        myGamePiece.y += myGamePiece.speedY;    
-        myGamePiece.update();
-    }
-}
-function sound(src) {
-    this.sound = document.createElement("audio");
-    this.sound.src = src;
-    this.sound.setAttribute("preload", "auto");
-    this.sound.setAttribute("controls", "none");
-    this.sound.style.display = "none";
-    document.body.appendChild(this.sound);
-    this.play = function(){
-        this.sound.play();
-    }
-    this.stop = function(){
-        this.sound.pause();
-    }    
-}
-
-function everyinterval(n) {
-    if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
-    return false;
-}
-
-function moveup(e) {
-    myGamePiece.image.src = "../image/fast-sail.png";
-    myGamePiece.speedY = -5; 
-}
-
-function movedown() {
-    myGamePiece.image.src = "../image/fast-sail.png";
-    myGamePiece.speedY = 5; 
-}
-
-function moveleft() {
-    myGamePiece.image.src = "../image/fast-sail.png";
-    myGamePiece.speedX = -5; 
-}
-
-function moveright() {
-    myGamePiece.image.src = "../image/fast-sail.png";
-    myGamePiece.speedX = 5; 
-}
-
-function clearmove(e) {
-    myGamePiece.image.src = "../image/sail.png";
-    myGamePiece.speedX = 0; 
-    myGamePiece.speedY = 0; 
-}
-startGame();
-
-</script>
-
+<script src="../script/game.js"></script>
+<script src="../script/script_logo.js"></script>
 </body>
 </html>
 

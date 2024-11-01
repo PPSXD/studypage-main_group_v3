@@ -31,10 +31,13 @@ height: 60px;
 
 .H1-Main-Title{
 max-height: 19px;
+font-size: 48px;
 color: white;
 }
 
 .navbar-ul{
+  margin-top: 80px;
+  font-size: 36px;
 display: flex;
 flex-wrap: nowrap;
 justify-content: space-evenly;
@@ -157,6 +160,7 @@ display: flex;
 flex-wrap: nowrap;
 float: right;
 margin-right: 20px;
+gap: 20px;
 }
 
 .language{

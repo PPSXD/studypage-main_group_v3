@@ -1,13 +1,12 @@
-.fa-gamepad{
+.fa-sitemap{
     color:  #ffd900;
     font-size: 50px;
-    margin-top: 24px;
     cursor: pointer;
   }
-  .fa-gamepad:hover{
+  .fa-sitemap:hover{
     color: cyan;;
   
   }
-  .fa-gamepad:active{
+  .fa-sitemap:active{
     color: red;
   }

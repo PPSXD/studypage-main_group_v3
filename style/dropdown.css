@@ -5,7 +5,7 @@
 
 .drop-down-bar-button button{
     
-    font-size: 16px;
+    font-size: 36px;
     border: none;
     cursor: pointer;
     color: #ffd900;
@@ -17,7 +17,7 @@
     color: #ffd900;
     text-decoration: none;
     padding: 10px 15px;
-    font-size: 16px;
+    font-size: 36px;
 }
 
 .drop-down-bar-button .bar-button-content{
@@ -56,24 +56,30 @@
 }
 
 .language-drop-down-bar-button button{
-    background-color: hsl(271, 76%, 53%);   
+    color:hsl(51.06deg 100% 50%);
     border: none;
-    font-size: 16px;
+    font-size: 50px;
     cursor: pointer;
-    color: white;
-
+    background-color: #22314200;
 }
+
+.language-drop-down-bar-button button:hover{
+    color:cyan;
+    background-color: #22314200;
+}
+
+
 
 .language-drop-down-bar-button a{
     display: block;
-    color: white;
+color:#ffd900;
     text-decoration: none;
 }
 
 .language-drop-down-bar-button .language-bar-button-content{
     display: none;
     position: absolute;
-    background-color: hsl(271, 76%, 69%);
+    
     max-width: 45px;
     padding: 7px 7px;
     box-shadow: 2px 2px 5px hsl(0, 0%, 0%, 0.8);
@@ -82,16 +88,14 @@
 .language-drop-down-bar-button:hover .language-bar-button-content{
     display: block;
 }
-.language-drop-down-bar-button:hover button{
-    background-color: hsl(271, 76%, 39%);
-}
+
 .language-drop-down-bar-button a:hover{
-color:#ffd900;
+    color:cyan;
 
 }
 
 .language-drop-down-bar-button a:active{
-    color:#69fca6;
+    color:red;
  }
 
 .language-heading-img{

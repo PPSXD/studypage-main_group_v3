@@ -7,79 +7,15 @@
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/dropdown.css">
     <link rel="shortcut icon" href="../favicon/favicon.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style/game-logo.css">
     <link rel="stylesheet" href="../style/lightbox.min.css">
     <link rel="stylesheet" href="../style/boat.css">
+    <link rel="stylesheet" href="../style/logo.css">
+    <link rel="stylesheet" href="../style/boat-slider.css">
 
 
-    <style>
-      .slider{
-          position: relative;
-          width:100%;
-          margin: auto;
-          overflow: hidden;
-          
-      }
-      .slider img{
-          max-width:  800px;
-          display: none;
-          margin: auto;
-      }
-      
-      .slide{
-        border: 5px solid white;
-      }
-      
-      .slide:hover{
-        cursor: pointer;
-      }
-      
-      img.displaySlide{
-          display: block;
-          animation-name: fade;
-          animation-duration: 1.5s;
-      
-      }
-      .slider button{
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          font-size: 2rem;
-          padding: 10px 15px;
-          background-color: hsl(0, 0%, 0%, 0.5);
-          color: white;
-          border: none;
-          cursor: pointer;
-      }
-      .prev{
-          left: 0;
-      }
-      .next{
-          right: 0;
-      }
-      @keyframes fade{
-          from{opacity: 0.5;}
-          to{opacity: 1;}
-      }
-      .slider button:hover{
-          background-color: hsla(0, 0%, 50%, 0.5);
-      }
-      
-      .slide-boat{
-        display: inline-block;
-        padding: 2em;
-        margin: -2em;
-        position: relative;
-        z-index: 1;
-      }
-          
-    .lb-closeContainer {
-      position: absolute;
-      top: -30px;
-      right: 28px;
-    }
-      </style>
 
 </head>
 <body>
@@ -88,17 +24,23 @@
             <source src="../video/background-video-3.mp4" type="video/mp4">
           </video>
     
-  <div class="language-bar">
-    <a href="game.html"><i class="fa-solid fa-gamepad fa-2xs"></i></a>
-    <span><a href="sitemap.html" class="sitemap-heading" title="sitemap"><span><img src="../image/sitemap.png" alt="sitemap" class="sitemap-heading-img"></span></a></span>
-    <div class="language-drop-down-bar-button">
-      <button><img src="../image/language.png" alt="language" class="language-heading-img"></button>
-      <div class="language-bar-button-content">
-      <div class="language"><a href="../tc/sitemap.html" title="繁">繁</a></div>
-      <div class="language"><a href="../sc/sitemap.html" title="簡">簡</a></div>
-    </div>
-  </div>
-  </div>
+          <div class="language-bar">
+            <a href="game.html"><i class="fa-solid fa-gamepad fa-2xs"  id="mark-3"></i></a>
+            <!-- <span><a href="en/sitemap.html" class="sitemap-heading" title="sitemap"><span><img src="image/sitemap.png" alt="sitemap" class="sitemap-heading-img"></span></a></span> -->
+        
+                
+              <a href="sitemap.html" title="sitemap">
+                <i class="fa-solid fa-sitemap" id="mark-1"></i>
+              </a>
+        
+            <div class="language-drop-down-bar-button">
+              <button><i class="fa-solid fa-language" id="mark-2"></i></button>
+              <div class="language-bar-button-content">
+              <div class="language"><a href="../tc/index.html" title="繁">繁</a></div>
+              <div class="language"><a href="../sc/index.html" title="簡">簡</a></div>
+            </div>    
+          </div>
+          </div>
   <span><a href="../index.html" class="boat-heading"><span><img src="../image/erb_logo2.png" alt="ERB Yachting & Charter" class="heading-img"></span></a></span>
   <div id="main_container" style="width:100%">
     <div id="main_header" class="main_title">
@@ -107,15 +49,16 @@
         <div class="navbar-ul">
           <a  class="bar-button" id="menu_yacht" href="index.html"><strong>Home</strong></a>
           <!-- <strong>​主頁</strong> -->
-          <div class="drop-down-bar-button" id="menu_yacht">
-            <button onclick="main_en()"><strong>Rent yacht</strong></button>
-            <div class="bar-button-content">
-              <a class="bar-button-1" id="menu_yacht" href="service.html"><strong>Rent yacht service</strong></a>
+          <!-- <div class="drop-down-bar-button" id="menu_yacht"> -->
+            <a class="bar-button" id="menu_yacht" href="main.html"><strong>Rent yacht</strong></a>
+            <!-- <button onclick="main_en()"><strong>Rent yacht</strong></button> -->
+            <!-- <div class="bar-button-content"> -->
+              <!-- <a class="bar-button-1" id="menu_yacht" href="service.html"><strong>Rent yacht service</strong></a> -->
               <!-- <strong>遊艇服務</strong> -->  
-              <a class="bar-button-2" id="menu_yacht" href="boat.html"><strong>Rent yacht boat</strong></a>
+              <!-- <a class="bar-button-2" id="menu_yacht" href="boat.html"><strong>Rent yacht boat</strong></a> -->
               <!-- <strong>遊艇船</strong> -->  
-            </div>
-        </div>
+            <!-- </div> -->
+        <!-- </div> -->
           <!-- <strong>遊艇出租</strong> -->             
           <a class="bar-button" id="menu_yacht" href="about.html"><strong>About us</strong></a>
            <!-- <strong>關於我們</strong> -->
@@ -185,51 +128,10 @@
   </div>
   </div>
 </div>
-<script>
-    // IMAGE SLIDER
-  const slides = document.querySelectorAll(".slides img")
-  let slideIndex = 0;
-  let intervalID = null;
-  //initializeSlider();
-  document.addEventListener("DOMContentLoaded", initializeSlider);
-  
-  function initializeSlider(){
-      if(slides.length > 0){
-          slides[slideIndex].classList.add("displaySlide");
-          intervalID = setInterval(nextSlide, 5000);
-      }
-      
-  }
-  
-  function showSlide(index){
-  
-      if(index >= slides.length){
-          slideIndex = 0;
-  
-      }else if(index < 0){
-          slideIndex = slides.length - 1;
-      }
-  
-      slides.forEach(slides =>{
-          slides.classList.remove("displaySlide");
-      });
-      slides[slideIndex].classList.add("displaySlide");
-  }
-  
-  function prevSlide(){
-      clearInterval(intervalID);
-      slideIndex--;
-      showSlide(slideIndex);
-  }
-  
-  function nextSlide(){
-      slideIndex++;
-      showSlide(slideIndex);
-  }
-  
-  
-  </script>
+
+  <script src="../script/slider.js"></script>
 <script src="../script/index.js"></script>
+<script src="../script/script_logo.js"></script>
 <script src="../script/lightbox-plus-jquery.min.js"></script>
 </body>
 </html>

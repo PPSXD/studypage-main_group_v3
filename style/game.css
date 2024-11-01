@@ -1,0 +1,97 @@
+canvas {
+    border:1px solid #d3d3d3;
+    background-image: url(../image/sea.png);
+}
+.restartGame{
+  border: none;
+  border-radius: 25px;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 15px;
+  background-color: hsl(0, 100%, 70%);
+  color: white;
+  }
+  .restartGame:hover{
+    background-color: hsl(0, 95%, 50%);
+  }
+  .restartGame:active{
+    background-color: hsl(0, 95%, 30%);
+  }
+  
+.up{
+  margin-top: 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 15px;
+  background-color: hsl(0, 100%, 70%);
+  color: white;
+}
+.up:hover{
+    background-color: hsl(0, 95%, 50%);
+  }
+  .up:active{
+    background-color: hsl(0, 95%, 30%);
+  }
+.left{
+
+  border: none;
+  border-radius: 25px;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 15px;
+  background-color: hsl(0, 100%, 70%);
+  color: white;
+}
+.left:hover{
+    background-color: hsl(0, 95%, 50%);
+  }
+  .left:active{
+    background-color: hsl(0, 95%, 30%);
+  }
+.right{
+
+  border: none;
+  border-radius: 25px;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 15px;
+  background-color: hsl(0, 100%, 70%);
+  color: white;
+
+}
+.right:hover{
+    background-color: hsl(0, 95%, 50%);
+  }
+  .right:active{
+    background-color: hsl(0, 95%, 30%);
+  }
+.down{
+ 
+  border: none;
+  border-radius: 25px;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 15px;
+  background-color: hsl(0, 100%, 70%);
+  color: white;
+}
+.down:hover{
+    background-color: hsl(0, 95%, 50%);
+  }
+  .down:active{
+    background-color: hsl(0, 95%, 30%);
+  }
+  .game-flex{
+    display: flex; flex-wrap: wrap; justify-content: center;
+  }
+.game-myfilter{
+  position:absolute;background-color:#000000;opacity:0.3;width:500px;height:500px;display:none;
+}
+.game-myrestartbutton{
+  position:absolute;padding-top:220px;padding-left:10px;display:none;
+}
+.game-move-button{
+  text-align:center;width:1900px;
+}
