@@ -11,67 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style/game-logo.css">
     <link rel="stylesheet" href="../style/logo.css">
+    <link rel="stylesheet" href="../style/slider.css">
 
-<style>
-.slider{
-    position: relative;
-    width:100%;
-    margin: auto;
-    overflow: hidden;
-    
-}
-.slider img{
-    max-width:  800px;
-    display: none;
-    margin: auto;
-}
-
-.slide{
-  border: 5px solid white;
-}
-
-.slide:hover{
-  cursor: pointer;
-}
-
-img.displaySlide{
-    display: block;
-    animation-name: fade;
-    animation-duration: 1.5s;
-
-}
-.slider button{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    padding: 10px 15px;
-    background-color: hsl(0, 0%, 0%, 0.5);
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-.prev{
-    left: 0;
-}
-.next{
-    right: 0;
-}
-@keyframes fade{
-    from{opacity: 0.5;}
-    to{opacity: 1;}
-}
-.slider button:hover{
-    background-color: hsla(0, 0%, 50%, 0.5);
-}
-
-
-.lb-closeContainer {
-  position: absolute;
-  top: -30px;
-  right: 28px;
-}
-</style>
 </head>
 <body>
   <div>
@@ -158,52 +99,10 @@ img.displaySlide{
   </div>
   </div>
   </div>
-<script>
-  // IMAGE SLIDER
-const slides = document.querySelectorAll(".slides img")
-let slideIndex = 0;
-let intervalID = null;
-//initializeSlider();
-document.addEventListener("DOMContentLoaded", initializeSlider);
-
-function initializeSlider(){
-    if(slides.length > 0){
-        slides[slideIndex].classList.add("displaySlide");
-        intervalID = setInterval(nextSlide, 5000);
-    }
-    
-}
-
-function showSlide(index){
-
-    if(index >= slides.length){
-        slideIndex = 0;
-
-    }else if(index < 0){
-        slideIndex = slides.length - 1;
-    }
-
-    slides.forEach(slides =>{
-        slides.classList.remove("displaySlide");
-    });
-    slides[slideIndex].classList.add("displaySlide");
-}
-
-function prevSlide(){
-    clearInterval(intervalID);
-    slideIndex--;
-    showSlide(slideIndex);
-}
-
-function nextSlide(){
-    slideIndex++;
-    showSlide(slideIndex);
-}
-
-
-</script>
-<script src="../script/script_logo.js"></script>
-<script src="../script/index.js"></script>
+  <script src="../script/slider.js"></script>
+  <script src="../script/script_logo.js"></script>
+  <script src="../script/index.js"></script>
+  
 
 
 
