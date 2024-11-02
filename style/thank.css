@@ -1,0 +1,25 @@
+.thank-you-h2{
+    font-size: 72px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.fa-check{
+    font-size: 148px;
+    color: green;
+    font-weight: bold;
+}
+.thank-you-p{
+    font-size: 24px;
+    font-weight: bold;
+}
+.thank-you-a{
+    text-decoration: none;
+    color: #ffd900;
+    font-weight: bold;
+    font-size: 20px;
+}
+.thank-you-a:hover{
+    color: cyan;
+}
+.thank-you-a:active{
+    color:red;
+}

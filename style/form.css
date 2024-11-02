@@ -13,8 +13,11 @@ justify-content: center;
 flex: 1;
 gap:20px;
 margin: 20px;
-
 }
+.form-big-group p{
+margin-bottom: 30px;
+}
+
 .name{
     margin-right: 100px;
     margin-left: 100px;
@@ -118,9 +121,7 @@ input::placeholder,
 textarea::placeholder{
 color: #ccc;
 }
-
-
-
+/* 
 input:invalid,
 textarea:invalid{
     border-color: red;
@@ -128,5 +129,5 @@ textarea:invalid{
 
 input:valid,
 textarea:valid{
-    border-color: green;
-}
+    border-color:  green;
+} */
