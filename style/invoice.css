@@ -11,6 +11,7 @@ body{
     padding: 70px 50px;
     border-radius: 10px;
     color: white;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0,0.1);
 }
 .invoice-flex{
     display: flex;
@@ -54,7 +55,7 @@ body{
     justify-content: space-between;
     flex-wrap: wrap;
   }
- 
+  
 .qty{
     margin-right: 100px
 }
